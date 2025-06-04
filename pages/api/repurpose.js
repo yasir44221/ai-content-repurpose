@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const { input, format } = req.body;
   const prompt = `Convert the following into a ${format}:\n${input}`;
 
-  const response = await fetch("https://api-inference.huggingface.co/models/google/flan-t5-base", {
+  const response = await fetch("https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${process.env.HUGGINGFACE_TOKEN}`,
